@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,34 +5,137 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ex1</title>
 </head>
+<style>
+    p{
+        top:0px;
+    }
+    table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      text-align: center;
+      margin-left: 80px;
+      width: 90%;
+    }
+    
+    td, th {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+    
+    tr:nth-child(even) {
+      background-color: #dddddd;
+    }
+    footer{
+        position: relative;
+        background-color:#ccc;
+        text-align:center;
+        padding:10px;
+        font-size:18px;
+        position: relative;
+        margin: 0;
+        left:0;
+        bottom:0;
+    }
+    </style>
 <body>
-	<h1>About Victoria Kirst</h1>
-	<p>My Name is Victoria and i am <b>jolly,clumsy</b> and <b>four-eyes</b></p>
-	<hr width="100%" />
-	<h2>My Classes This Quater</h2>
-	<ul>
-		<li>CSE 451 - operating Systems</li>
-		<li>CSE 471 - Computer Design and Organization</li>
-		<li>PHYS 121 - Physics Mechanics </li>
-		<li>CES 498 - Reseach w/Prof.Luis Ceze</li>
-	</ul>
-	<h2>My Favorite Movies</h2>
-	<p><i>(I actually don't watch too many movies, so...here goes!)</i></p>
-	<ol type="1">
-		<li>The last 30 minutes of Forrest Gump(<a href="https://www.imdb.com">IMDB</a>)</li>
-		<li>Star Trek Episode V with Zazu(<a href="https://www.imdb.com">IMDB</a>)</li>
-		<li>Fight Club(not really,but i've seen live 3 movies total so this is 3rd fave by technically)(<a href="https://www.imdb.com">IMDB</a>)</li>
-	</ol>
-	<h2>My Mood</h2>
-	<img src="/images/1.jpg" alt="bup_be">
-	<img src="/images/3.jpg" alt="con_cho">
-	<h2>Fun Facts About My Neighbors</h2>
-	<ul>
-		<li>Sue Smith: <i>Effervescent</i> is a word that describes her </li>
-		<li>Bill Thompson: Love playing <i>Yu-Ghi-Oh</i></li>
-	</ul>
-	<img src="/images/CELL3.png" alt="XHHTML">
-	<img src="/images/cell5.png" alt="CSS">
-</body>
-</html>
+    <h1 style="text-align:center">GIỚI THIỆU VỀ APACHE SPARK VÀ MAPREDUCE</h1>
+    <h2 style="text-align:center">Xử Lí Dữ liệu lớn - Lê Anh Cường </h2>
+    <h2 style="text-align:center">Ngô Minh Hiếu - 51702017</h2>
 
+    <h2>1. Giới Thiệu</h2>
+    <h3>a. Apache Spark</h3>
+    <p>Apache Spark là một cụm tính toán các thư viện mã nguồn mở được phát triển bởi AMPLab tại đại học Califonia sau này được chuyển sáng cho Apache Software Foundation và được phát triển cho đén ngày nay
+        Spark cho phép xây dựng mô phỏng tính toán trên 1 cụm máy tính, có thể tính toán cùng lúc trên những máy tính đó và cùng trên một tập dữ liệu mà không phải trích xuất mẫu toán thử nghiệm 
+        tốc độ xử lý của Spark có được do việc tính toán được thực hiện trên nhiều máy tính khác nhau. Đồng thời việc tính toán được thực hiện ở bộ nhớ trong hoặc có thể thực hiện trên Ram 
+        Thành phần trung gian của Spark là Spark core: cung cấp những chức năng cơ bản như lưu lại lịch sử của các tác vụ, quản lý bộ nhớ,fault recovery, tưởng tác với các hệ thống lưu trữ và đặc biệt Spark Core cung cấp API để định nghĩa RDD( Resilient Distributed DataSet) là tập hợp của các item được phân tán trên các node của cluster và có thể xử lý song song. Spark core có thể hoạt động tốt với thư viện giành cho SQL, Machine learning, stream processing. Hoạt động với các API cho các ngôn ngữ như Java, Scala, Python, và R 
+    </p>
+    <h3>b.	MapReduce</h3>
+    <p>MapReduce được tự cho là Một framework phần mềm tạo ra để dễ dàng viết các ứng dụng xử lý lượng lớn dữ liệu(tập dữ liệu nhiều terabyte) song song trên các cluster lớn(lên đến hàng ngàn nodes) của phần cứng theo cách đáng tin cậy, 
+        MapReduce: bao gồm 2 thành phần tuần tự thực hiện các tác vụ: Map (được hiểu là ánh xạ) và Reduce(rút gọn). Bộ lọc ánh xạ và sắp xếp dữ liệu trọng khi chuyển đổi chúng thành các cặp khóa và giá trị, Sau khi kết thúc quá trình ánh xạ sẽ thưc hiện tiếp tác vụ là rút gọn.Rút gòn là việc lấy đầu vào từ ánh xạ sau đó giảm kích thước của dữ liệu nhận vào bằng cách thực hiện một số cách để thu gọn tập dữ liệu lại. MapReduce có thể tăng tốc đáng kể các tác vụ dữ liệu lớn bằng cách chia nhỏ dữ liệu lớn rồi xử lý trên từng phần nhỏ đó 1 cách song song
+    </p>
+    <h2>2. So Sánh</h2>
+    <p>Sự Khác nhau giữa Spark và MapReduce:</p>
+    <ul>
+        <li>Hiệu suất</li>
+        <li>Dễ sử dụng</li>
+        <li>Xử lí dữ liệu</li>
+        <li>Bảo mật </li>
+    </ul>
+    <p>Các điểm tương đồng giữa Spark và MapReduce</p>
+    <ul>
+        <li>Giá cả </li>
+        <li>Khả năng tương thích</li>
+        <li>Rủi ro thất bại</li>
+    </ul>
+    <h3>a. Khác nhau</h3>
+
+    <table>
+        <tr>
+          <th></th>
+          <th>Apache Spark</th>
+          <th>MapReduce</th>
+        </tr>
+        <tr>
+          <td>Hiệu Suất</td>
+          <td>  Apache Spark xử lý dữ liệu trong bộ nhớ truy cập ngẫu nhiên (RAM),<br>
+            Spark cần rất nhiều bộ nhớ. Giống như cơ sở dữ liệu tiêu chuẩn, Spark tải một quy trình vào bộ nhớ và <br>
+            giữ nó ở đó cho đến khi có thông báo mới để lưu vào bộ nhớ đệm.Nếu bạn chạy Spark trên Hadoop YARN với <br>
+            các dịch vụ đòi hỏi tài nguyên khác hoặc nếu dữ liệu quá lớn để vừa hoàn toàn vào bộ nhớ thì Spark có thể <br>
+            bị suy giảm hiệu suất nghiêm trọng.<br>
+            </td>
+          <td>Hadoop MapReduce duy trì dữ liệu quay trở lại đĩa sau một bản đồ hoặc giảm hoạt động <br>
+            MapReduce hủy các quy trình của nó ngay sau khi hoàn thành công việc, vì vậy nó có thể dễ dàng <br>
+            chạy cùng với các dịch vụ khác với sự khác biệt nhỏ về hiệu suất.<br>
+          </td>
+        </tr>
+        <tr>
+          <td>Dễ sử dụng</td>
+          <td>Spark có các API được tạo sẵn cho Java, Scala và Python, và cũng bao gồm Spark SQL (trước đây gọi là Shark) <br>
+              cho người hiểu biết về SQL. Nhờ các khối xây dựng đơn giản của Spark, thật dễ dàng để viết các hàm do người dùng xác định. <br>
+              Spark thậm chí còn bao gồm một chế độ tương tác để chạy các lệnh với phản hồi ngay lập tức.<br>
+        </td>
+          <td>MapReduce được viết bằng Java và nổi tiếng là rất khó lập trình. Apache Pig làm cho nó dễ dàng hơn (mặc dù nó đòi hỏi một thời gian để học cú pháp),<br> 
+            trong khi Apache Hive bổ sung khả năng tương thích SQL cho đĩa. Một số công cụ Hadoop cũng có thể chạy các công việc MapReduce mà không cần lập trình.<br>
+            Ví dụ: Xplenty là một dịch vụ tích hợp dữ liệu được xây dựng trên Hadoop và cũng không yêu cầu bất kỳ lập trình hoặc triển khai nào.</td>
+        </tr>
+        <tr>
+          <td>Xử Lí Dữ Liệu</td>
+          <td>
+            Spark có thể làm được nhiều việc hơn là xử lý dữ liệu đơn thuần: nó cũng có thể xử lý đồ thị và bao gồm thư viện máy học MLlib. <br> 
+            Nhờ hiệu suất cao, Spark có thể xử lý theo thời gian thực cũng như xử lý hàng loạt. <br>
+            Spark cung cấp nền tảng "một kích thước phù hợp với tất cả" mà bạn có thể sử dụng thay vì chia nhỏ các nhiệm vụ trên các nền tảng khác nhau, <br>
+            điều này làm tăng thêm sự phức tạp về CNTT của bạn.<br>
+          </td>
+          <td>
+            Hadoop MapReduce rất tuyệt vời để xử lý hàng loạt. Nếu muốn có tùy chọn thời gian thực, <br>
+            bạn sẽ cần sử dụng một nền tảng khác như Impala hoặc Apache Storm và để xử lý đồ thị, bạn có thể sử dụng Apache Giraph.<br>
+             MapReduce từng có Apache Mahout cho máy học, nhưng kể từ đó, nó đã được chuyển sang sử dụng Spark và H2O.<br>
+          </td>
+        </tr>
+        <tr>
+          <td>Bảo Mật</td>
+          <td>
+            Về mặt bảo mật, Spark kém tiên tiến hơn khi so sánh với MapReduce. Trên thực tế, bảo mật trong Spark được đặt thành tắt theo mặc định, điều này có thể khiến bạn dễ bị tấn công. <br>
+            Xác thực trong Spark được hỗ trợ cho các kênh RPC thông qua một bí mật được chia sẻ. Spark bao gồm ghi nhật ký sự kiện như một tính năng và giao diện người dùng Web có thể được bảo mật thông qua các bộ lọc javax servlet. <br>
+            Ngoài ra, vì Spark có thể chạy trên YARN và sử dụng HDFS, nó cũng có thể tận hưởng xác thực Kerberos,quyền đối với tệp HDFS và mã hóa giữa các nút.<br>
+          </td>
+          <td>
+            Hadoop MapReduce có thể tận hưởng tất cả các lợi ích bảo mật của Hadoop và tích hợp với các dự án bảo mật Hadoop, <br>
+            như Knox Gateway và Apache Sentry. Dự án Rhino, nhằm mục đích cải thiện bảo mật của Hadoop, chỉ đề cập đến Spark liên quan đến việc thêm hỗ trợ Sentry.<br>
+            Nếu không, các nhà phát triển Spark sẽ phải tự cải thiện bảo mật Spark.<br>
+          </td>
+        </tr>
+      </table>
+      <h3>b. Giống Nhau</h3>
+      <p>
+        Spark và MapReduce là các giải pháp mã nguồn mở, nhưng bạn vẫn cần chi tiền cho máy móc và nhân viên
+        Apache Spark có thể chạy như một ứng dụng độc lập, trên Hadoop YARN hoặc Apache Mesos tại chỗ hoặc trên đám mây. Spark hỗ trợ các nguồn dữ liệu triển khai Hadoop InputFormat, vì vậy nó có thể tích hợp với tất cả các nguồn dữ liệu và định dạng tệp giống nhau mà Hadoop hỗ trợ. Spark cũng hoạt động với các công cụ thông minh kinh doanh thông qua JDBC và ODBC.
+        Spark có các lần thử lại cho mỗi tác vụ và thực thi suy đoán, giống như MapReduce. Tuy nhiên, MapReduce có một chút lợi thế ở đây vì nó dựa trên ổ cứng, thay vì RAM. Nếu một quá trình MapReduce gặp sự cố khi đang thực thi, nó có thể tiếp tục ở nơi nó đã dừng lại, trong khi Spark sẽ phải bắt đầu xử lý từ đầu.
+        
+      </p>
+      <footer>
+        © 2020 Copyright: <a class="text-dark" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+      </footer>  
+    </body>
+</html>
